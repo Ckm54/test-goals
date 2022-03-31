@@ -3,6 +3,9 @@
     <hr>
     <div class="row">
       <div class="col-md-6">
+        <app-add-goal></app-add-goal>
+      </div>
+      <div class="col-md-6">
         <div *ngFor="let goal of goals; let i = index">
           <div>
             <h4 id={{i}} appStrikethrough>
