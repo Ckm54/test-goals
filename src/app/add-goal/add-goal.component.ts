@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Goal } from '../goal';
 
 @Component({
   selector: 'app-add-goal',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddGoalComponent implements OnInit {
 
+  newGoal = new Goal(0, " ", " ", new Date());
+  
   constructor() { }
 
   ngOnInit(): void {
