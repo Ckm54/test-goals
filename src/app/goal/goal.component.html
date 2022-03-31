@@ -8,7 +8,7 @@
         </li>
         <button (click)="toggleDetails(i)">Toggle Details</button>
         <app-goal-detail *ngIf='goal.showDescription' [goal]="goal" 
-        (isComplete)="completeGoal($event, i)"></app-goal-detail>
+        (isComplete)="deleteGoal($event, i)"></app-goal-detail>
       </div>
     </ul>
   </div>
