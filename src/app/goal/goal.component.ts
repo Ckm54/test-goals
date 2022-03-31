@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Goal } from '../goal';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-goal',
@@ -8,7 +9,7 @@ import { Goal } from '../goal';
 })
 export class GoalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datepipe: DatePipe) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +34,14 @@ export class GoalComponent implements OnInit {
         this.goals.splice(index, 1)
       }
     }
+  }
+
+  addGoal(goal: any) {
+    let goalLength = this.goals.length;
+    goal.id = goalLength+1;
+    const inputDate = new Date(goal.completeDate);
+    goal.completeDate = this.datepipe.transform(inputDate, "yyyy-MM-dd")
+    this.goals.push(goal);
   }
 
 }
