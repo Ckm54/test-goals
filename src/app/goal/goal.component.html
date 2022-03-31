@@ -3,7 +3,7 @@
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <app-add-goal></app-add-goal>
+        <app-add-goal (addNewGoal)="addGoal($event)"></app-add-goal>
       </div>
       <div class="col-md-6">
         <div *ngFor="let goal of goals; let i = index">
